@@ -8,20 +8,21 @@ let bills = {
     calcBill: function(){
         for(i=0; i<= this.bill.length; i++){
             if(this.bill[i] < 50){
-                this.tip[i] = this.bill[i]/5;
+                this.tip.push(this.bill[i]/5);
             }
             else if( this.bill[i]>50 && this.bill[i] < 200){
-            this.tip[i] = 3*this.bill[i]/20;
+            this.tip.push(3*this.bill[i]/20);
             }
             else if(this.bill[i]>200){
-            this.tip[i] = this.bill[i]/10;
+            this.tip.push(this.bill[i]/10);
             }
         }
         this.finalBill();
     },
     finalBill: function(){
        for(i=0; i<this.bill.length; i++) {
-            this.totalBill[i] = this.tip[i] + this.bill[i];
+            // this.totalBill[i] = this.tip[i] + this.bill[i];
+            this.totalBill.push(this.tip[i] + this.bill[i])
         }
     }
     }
